@@ -56,13 +56,10 @@ def resolve_equation(a: float, b: float, c: float) -> tuple:
     if d > 0:
         n_var = 2
         var1 = (-b + d**0.5) / 2 * a
-        var1 = int(var1)
         var2 = (-b - d**0.5) / 2 * a
-        var2 = int(var2)
     elif d == 0:
         n_var = 1
         var1 = (-b + d ** 0.5) / 2 * a
-        var1 = int(var1)
         var2 = None
     else:
         n_var = 0

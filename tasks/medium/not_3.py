@@ -7,10 +7,11 @@
 
 
 def not_3(array: list) -> list:
-    for i in array:
+    array_copy = array.copy()
+    for i in array_copy:
         if i % 3 == 0:
-            array.remove(i)
-    return array
+            array_copy.remove(i)
+    return array_copy
 
 
 if __name__ == '__main__':

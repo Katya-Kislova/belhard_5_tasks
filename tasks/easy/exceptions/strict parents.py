@@ -56,12 +56,17 @@ if __name__ == '__main__':
     print("Просим показать ребенка дневник\n")
     gift = None
     try:
-        get_score() < 7
-    except ValueError as e:
-        print(f'Ребенок получил хорошую оценку: {e}')
+        score = get_score()
+        if score < 7:
+            raise ValueError(f'{score}')
+        print('Ребенок получил хорошую оценку')
         gift = random_gift()
-    except RuntimeError as e:
-        print('Ошибка')
+    except RuntimeError as exc:
+        print(exc)
         punish_dog()
-    except ValueError as e:
-        punish_child() = punish_child(e)
+    except ValueError as exc:
+        punish_child(exc)
+    else:
+        praise(gift)
+    finally:
+        cook_dinner()

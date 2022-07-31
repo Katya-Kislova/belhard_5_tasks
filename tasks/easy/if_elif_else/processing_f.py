@@ -28,17 +28,13 @@ def processing_f(str_with_f: str) -> Union[int, str]:
     :rtype: str
     """
     if str_with_f.count('f') == 0:
-        str_with_f = str_with_f.swapcase()
-        return str_with_f
-    if str_with_f.count('f') == 1:
-        str_with_f = str_with_f.find('f')
-        return str_with_f
-    if str_with_f.count('f') == 2:
-        str_with_f = str_with_f.rfind('f')
-        return str_with_f
+        return str_with_f.swapcase()
+    elif str_with_f.count('f') == 1:
+        return str_with_f.find('f')
+    elif str_with_f.count('f') == 2:
+        return str_with_f.rfind('f')
     else:
-        str_with_f = str_with_f[::-1]
-        return str_with_f
+        return str_with_f[::-1]
 
 
 if __name__ == '__main__':
